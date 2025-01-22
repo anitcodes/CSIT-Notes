@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Notes - CSIT Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-book-open"></i>
+            <span>CSIT Notes</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" id="createNoteBtn">
+                <i class="fas fa-plus"></i> Add Notes
+            </a>
+            <a href="notes.html" class="active">
+                <i class="fas fa-book"></i> All Notes
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="notes-header">
+            <h1>All Notes</h1>
+            <p>Your collection of study notes</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchNotes" placeholder="Search your notes...">
+                </div>
+            </div>
+        </section>
+
+        <section class="notes-grid" id="notesGrid">
+            <!-- Notes will be populated here -->
+        </section>
+    </main>
+
+    <!-- Modal for creating/editing notes -->
+    <div class="modal" id="noteModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Note</h2>
+            <form id="noteForm">
+                <input type="text" name="title" placeholder="Enter note title..." required>
+                <div class="editor-toolbar">
+                    <button type="button" class="toolbar-btn" id="addImage">
+                        <i class="fas fa-image"></i> Add Image
+                    </button>
+                    <button type="button" class="toolbar-btn" id="addDocument">
+                        <i class="fas fa-file-alt"></i> Add Document
+                    </button>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                    <input type="file" id="documentInput" accept=".pdf,.doc,.docx" style="display: none;">
+                </div>
+                <textarea name="content" placeholder="Write your notes here..." required></textarea>
+                <div class="attachments-preview" id="attachmentsPreview"></div>
+                <div class="note-options">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
